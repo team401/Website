@@ -140,7 +140,7 @@
 
                     <!-- Application sub title -->
                     <div class="bottom bottom-container center horizontal layout">
-                        <div class="bottom-title paper-font-subhead">FIRST Robotics Competition Team 401</div>
+                        <div class="bottom-title paper-font-subhead"><i>FIRST</i> Robotics Competition Team 401</div>
                     </div>
 
                 </paper-toolbar>
@@ -151,15 +151,15 @@
 
                         <section data-route="home">
                             <paper-material elevation="1">
-                                <my-greeting></my-greeting>
-                                <p class="paper-font-subhead">You now have:</p>
+                                <h2>Welcome!</h2>
                                 <sc-swiper>
-                                    <img src="http://lorempixel.com/640/480/cats">
-                                    <img src="http://lorempixel.com/640/480/sports">
-                                    <img src="http://lorempixel.com/640/480/animals">
+                                    <img src="images/slider/1.jpg">
+                                    <img src="images/slider/2.jpg">
+                                    <img src="images/slider/3.jpg">
+                                    <img src="images/slider/4.jpg">
+                                    <img src="images/slider/5.jpg">
+                                    <img src="images/slider/6.jpg">
                                 </sc-swiper>
-                                <my-list></my-list>
-                                <p class="paper-font-body2">Looking for more Web App layouts? Check out our <a href="https://github.com/PolymerElements/app-layout-templates">layouts</a> collection. You can also <a href="http://polymerelements.github.io/app-layout-templates/">preview</a> them live.</p>
                             </paper-material>
                             <paper-material elevation="1">
                                 <p class="paper-font-body2">This is another card.</p>
@@ -210,8 +210,14 @@
                         <section data-route="cal">
                             <paper-material elevation="1">
                                 <h2 class="page-title">Calendar</h2>
-                                <div class='calendar-container'>
+                                <div class="responsive-iframe-container small-container">
+                                    <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;mode=AGENDA&amp;height=600&amp;wkst=1&amp;bgcolor=%23ffffff&amp;src=nnjousubqta8t6i1cgggohrkmo%40group.calendar.google.com&amp;color=%23B1440E&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="800" frameborder="0" scrolling="no"></iframe>
+                                </div>
+                                <div class="responsive-iframe-container big-container">
                                     <iframe src="https://calendar.google.com/calendar/embed?showTitle=0&amp;showPrint=0&amp;showTabs=0&amp;showCalendars=0&amp;showTz=0&amp;height=800&amp;wkst=1&amp;bgcolor=%23FFFFFF&amp;src=nnjousubqta8t6i1cgggohrkmo%40group.calendar.google.com&amp;color=%23BE6D00&amp;ctz=America%2FNew_York" style="border-width:0" width="800" height="600" frameborder="0" scrolling="no"></iframe>
+                                </div>
+                                <div class='calendar-container'>
+
                                 </div>
                             </paper-material>
                         </section>
