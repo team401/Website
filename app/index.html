@@ -224,15 +224,37 @@
                         <section data-route="contact">
                             <paper-material elevation="1">
                                 <h2 class="page-title">Contact</h2>
-                                <p>This is the contact section</p>
+                                <p>We love hearing from people! Want to ask a question, get more information, or get involved with our team? Send us an email!</p>
+                                <paper-input error-message="You do have a name!" label="Name" auto-validate required style="width:48em"></paper-input>
+                                <gold-email-input label="Your Email Address" required auto-validate  error-message="Please enter a valid email address!" style="width:48em"></gold-email-input>
+                                <paper-textarea label="Message" style="width:48em"></paper-textarea>
                             </paper-material>
                         </section>
-
                     </iron-pages>
+                    <footer class="layout horizontal center">
+                        <h2>Find us on: </h2>
+                        <div class="footer-item">
+                            <social-media-icons icon="twitter" color="#fff" size="30" href="https://twitter.com/TeamCopperheads"></social-media-icons>
+                            <a href="https://twitter.com/TeamCopperheads"><p>Twitter</p></a>
+                        </div>
+                        <div class="footer-item">
+                            <social-media-icons icon="facebook" color="#fff" size="30" href="https://www.facebook.com/hokieguard"></social-media-icons>
+                            <a href="https://www.facebook.com/hokieguard"><p>Facebook</p></a>
+                        </div>
+
+                        <div class="footer-item">
+                            <social-media-icons icon="youtube" color="#fff" size="30" href="https://www.youtube.com/user/TheHokieguard"></social-media-icons>
+                            <a href="https://www.youtube.com/user/TheHokieguard"><p>Youtube</p></a>
+                        </div>
+                        <div class="footer-item">
+                            <social-media-icons icon="github" color="#fff" size="30" href="https://github.com/team401"></social-media-icons>
+                            <a href="https://github.com/team401"><p>Github</p></a>
+                        </div>                        
+                    </footer>
                 </div>
+
             </paper-scroll-header-panel>
         </paper-drawer-panel>
-
         <paper-toast id="toast">
             <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
         </paper-toast>
