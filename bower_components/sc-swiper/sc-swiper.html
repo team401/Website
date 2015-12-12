@@ -184,16 +184,11 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                     type: Object,
                     value: {
                         autoplay: 5000,
-                        effect: 'coverflow',
+                        effect: 'cube',
                         autoplayDisableOnInteraction: false,
                         slidesPerView: 'auto',
-                        coverflow: {
-                            rotate: 50,
-                            stretch: 0,
-                            depth: 100,
-                            modifier: 1,
-                            slideShadows: true
-                        }
+                        preloadImages: false,
+                        lazyLoadingInPrevNext: true
                     }
                 }
 
@@ -246,7 +241,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
                             var node = wrapper.appendChild(slides[i]);
                             node.removeEventListener('tap', this.view);
                             node.addEventListener('tap', this.view);
-
+                            
                             var url = node.style.backgroundImage;
                             if (url) {
                                 url = url.replace(/^url\(['"]?([^'"\)]*).*?$/, '$1');
@@ -258,7 +253,7 @@ subject to an additional IP rights grant found at http://polymer.github.io/PATEN
 
                                 img.src = url;
                             }
-
+                            
                             nodes.push(node);
                         }
                     }
