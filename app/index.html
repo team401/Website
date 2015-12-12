@@ -153,6 +153,7 @@
                             <paper-material elevation="1">
                                 <h2>Welcome!</h2>
                                 <sc-swiper>
+                                    <img src="images/slider/7.jpg">
                                     <img src="images/slider/1.jpg">
                                     <img src="images/slider/2.jpg">
                                     <img src="images/slider/3.jpg">
@@ -161,44 +162,70 @@
                                     <img src="images/slider/6.jpg">
                                 </sc-swiper>
                             </paper-material>
-                            <paper-material elevation="1">
-                                <p class="paper-font-body2">This is another card.</p>
-                            </paper-material>
-
                             <paper-material elevation="1" class="paper-font-body2">
-                                <h1 id="license">License</h1>
-                                <p>Everything in this repo is BSD style license unless otherwise specified.</p>
-                                <p>Copyright (c) 2015 The Polymer Authors. All rights reserved.</p>
-                                <p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
-                                <ul>
-                                    <li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
-                                    <li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
-                                    </li>
-                                    <li>Neither the name of Google Inc. nor the names of its contributors may be used to endorse or promote products derived from this software without specific prior written permission.</li>
-                                </ul>
-                                <p>THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot; AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+                                <h2>Sponsors</h2>
+                                <p>Team 401 exists thanks to the help of all of our generous sponsors!</p>
+                                <div id="sponsors" class="flex-wrap" style:"justify-content: space-around;">
+                                    <a href="https://8020.net/"><iron-image style="width:180px; height:70px; margin: 0px; padding: 0px;" sizing="contain" src="images/sponsors/s1.jpg"></iron-image></a>
+                                    <a href="http://aciwebs.com/"><iron-image style="width:180px; height:70px; margin: 0px; padding: 0px;" sizing="contain" src="images/sponsors/s2.jpg"></iron-image></a>
+                                    <a href="http://bhs.mcps.org/"><iron-image style="width:180px; height:70px; margin: 0px; padding: 0px;" sizing="contain" src="images/sponsors/s3.jpg"></iron-image></a>
+                                    <a href=""><iron-image style="width:180px; height:70px; margin: 0px; padding: 0px;" sizing="contain" src="images/sponsors/s4.jpg"></iron-image></a>
+                                    <a href=""><iron-image style="width:180px; height:70px; margin: 0px; padding: 0px;" sizing="contain" src="images/sponsors/s5.jpg"></iron-image></a>
+                                    <a href=""><iron-image style="width:180px; height:70px; margin: 0px; padding: 0px;" sizing="contain" src="images/sponsors/s6.jpg"></iron-image></a>
+                                    <a href=""><iron-image style="width:180px; height:70px; margin: 0px; padding: 0px;" sizing="contain" src="images/sponsors/s8.jpg"></iron-image></a>
+                                    <a href=""><iron-image style="width:180px; height:70px; margin: 0px; padding: 0px;" sizing="contain" src="images/sponsors/s7.jpg"></iron-image></a>
+                                </div>
                             </paper-material>
 
                         </section>
 
-                        <section data-route="about">
+                        <section data-route="robots">
                             <paper-material elevation="1">
-                                <h2 class="page-title">Users</h2>
-                                <p>This is the users section</p>
-                                <a href$="{{baseUrl}}users/Addy">Addy</a>
+                                <h2 class="page-title">Robots</h2>
+                                <p>These are all of Team 401's robots!</p>
+                                <a href$="{{baseUrl}}robots/2001">2001</a>
                                 <br>
-                                <a href$="{{baseUrl}}users/Rob">Rob</a>
+                                <a href$="{{baseUrl}}robots/2002">2002</a>
                                 <br>
-                                <a href$="{{baseUrl}}users/Chuck">Chuck</a>
+                                <a href$="{{baseUrl}}robots/2003">2003</a>
                                 <br>
-                                <a href$="{{baseUrl}}users/Sam">Sam</a>
+                                <a href$="{{baseUrl}}robots/2004">2004</a>
+                                <br>
+                                <a href$="{{baseUrl}}robots/2005">2005</a>
+                                <br>
+                                <a href$="{{baseUrl}}robots/2006">2006</a>
+                                <br>
+                                <a href$="{{baseUrl}}robots/2007">2007</a>
+                                <br>
+                                <a href$="{{baseUrl}}robots/2008">2008</a>
+                                <br>
+                                <a href$="{{baseUrl}}robots/2009">2009</a>
+                                <br>
+                                <a href$="{{baseUrl}}robots/2010">2010</a>
+                                <br>
+                                <a href$="{{baseUrl}}robots/2011">2011</a>
+                                <br>
+                                <a href$="{{baseUrl}}robots/2012">2012</a>
+                                <br>
+                                <a href$="{{baseUrl}}robots/2013">2013</a>
+                                <br>
+                                <a href$="{{baseUrl}}robots/2014">2014</a>
+                                <br>
+                                <a href$="{{baseUrl}}robots/2015">2015</a>
                             </paper-material>
                         </section>
 
-                        <section data-route="user-info">
+                        <section data-route="robot-info">
                             <paper-material elevation="1">
-                                <h2 class="page-title">User: {{params.name}}</h2>
-                                <div>This is {{params.name}}'s section</div>
+                                <div class="layout horizontal center">
+                                    <a data-route="robots" href="robots">
+                                        <paper-button raised><iron-icon icon="chevron-left" style="color: black"></iron-icon></paper-button>
+                                    </a>
+
+                                    <h2 class="page-title" style="padding-left: 20px">Robot: {{params.name}}</h2>
+                                </div>
+
+                                <div>This is information page for the {{params.name}} robot.</div>
                             </paper-material>
                         </section>
                         <section data-route="res">
@@ -223,11 +250,25 @@
                         </section>
                         <section data-route="contact">
                             <paper-material elevation="1">
-                                <h2 class="page-title">Contact</h2>
+                                <h2 class="page-title">Email Us</h2>
                                 <p>We love hearing from people! Want to ask a question, get more information, or get involved with our team? Send us an email!</p>
-                                <paper-input error-message="You do have a name!" label="Name" auto-validate required style="width:48em"></paper-input>
-                                <gold-email-input label="Your Email Address" required auto-validate  error-message="Please enter a valid email address!" style="width:48em"></gold-email-input>
-                                <paper-textarea label="Message" style="width:48em"></paper-textarea>
+                                <div class="layout horizontal center">
+                                    <paper-input error-message="Please put your name!" label="Name" auto-validate required style="width:24em"></paper-input>
+                                    <gold-email-input label="Your Email Address" required auto-validate error-message="Please enter a valid email address!" style="padding-left: 2em; width:24em"></gold-email-input>
+                                </div>
+                                <div class="layout horizontal center">
+                                    <paper-textarea label="Message" style="width:48em"></paper-textarea>
+                                </div>
+                                <div class="layout horizontal center">
+                                    <paper-button raised class="custom orange">Send email!</paper-button>
+                                </div>
+                            </paper-material>
+                            <paper-material elevation="1">
+                                <h2 class="page-title">Visit the Shop</h2>
+                                <p>Team 401 is based out of Christiansburg High School: 100 Independence Boulevard, Christiansburg, VA 24073</p>
+                                <div class="layout horizontal center map-iframe-container ">
+                                    <iframe src="https://www.google.com/maps/embed?wmode=transparent&amp;pb=!1m18!1m12!1m3!1d3180.350724168693!2d-80.41649640000004!3d37.14435920000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x884d937350f9c389%3A0x162f49a29c8bbe21!2s100+Independence+Blvd%2C+Christiansburg%2C+VA+24073!5e0!3m2!1sen!2sus!4v1390612319428" width="600" height="450" frameborder="0" style="border:0"></iframe>
+                                </div>
                             </paper-material>
                         </section>
                     </iron-pages>
@@ -235,21 +276,29 @@
                         <h2>Find us on: </h2>
                         <div class="footer-item">
                             <social-media-icons icon="twitter" color="#fff" size="30" href="https://twitter.com/TeamCopperheads"></social-media-icons>
-                            <a href="https://twitter.com/TeamCopperheads"><p>Twitter</p></a>
+                            <a href="https://twitter.com/TeamCopperheads">
+                                <p>Twitter</p>
+                            </a>
                         </div>
                         <div class="footer-item">
                             <social-media-icons icon="facebook" color="#fff" size="30" href="https://www.facebook.com/hokieguard"></social-media-icons>
-                            <a href="https://www.facebook.com/hokieguard"><p>Facebook</p></a>
+                            <a href="https://www.facebook.com/hokieguard">
+                                <p>Facebook</p>
+                            </a>
                         </div>
 
                         <div class="footer-item">
                             <social-media-icons icon="youtube" color="#fff" size="30" href="https://www.youtube.com/user/TheHokieguard"></social-media-icons>
-                            <a href="https://www.youtube.com/user/TheHokieguard"><p>Youtube</p></a>
+                            <a href="https://www.youtube.com/user/TheHokieguard">
+                                <p>Youtube</p>
+                            </a>
                         </div>
                         <div class="footer-item">
                             <social-media-icons icon="github" color="#fff" size="30" href="https://github.com/team401"></social-media-icons>
-                            <a href="https://github.com/team401"><p>Github</p></a>
-                        </div>                        
+                            <a href="https://github.com/team401">
+                                <p>Github</p>
+                            </a>
+                        </div>
                     </footer>
                 </div>
 
