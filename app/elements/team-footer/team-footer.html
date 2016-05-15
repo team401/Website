@@ -1,0 +1,84 @@
+<link rel="import" href="../../bower_components/polymer/polymer.html">
+<dom-module id="team-footer">
+  <template>
+    <style>
+      footer {
+        background: var(--default-primary-color);
+        width: 100%;
+        justify-content: center;
+        text-decoration: none;
+        color: white;
+        display: flex;
+      }
+      
+      footer p {
+        margin-left: 5px;
+        margin-right: 15px;
+        margin-bottom: 5px;
+        margin-top: 5px;
+      }
+      
+      footer a {
+        text-decoration: none;
+        color: white;
+      }
+      
+      .footer-item {
+        margin-left: 15px;
+        margin-top: 0px;
+        display: flex;
+        justify-content: center;
+      }
+      
+      @media (max-width: 889px) {
+        footer a {
+          display: none;
+        }
+      }
+      
+      @media (min-width: 890px) {
+        footer a {
+          display: flex;
+        }
+      }
+    </style>
+    <footer class="layout horizontal center" style="z-index:99999">
+      <h2>Find us on: </h2>
+      <div class="footer-item">
+        <social-media-icons icon="twitter" color="#fff" size="30" href="https://twitter.com/frcteam401"></social-media-icons>
+        <a href="https://twitter.com/frcteam401">
+          <p>Twitter</p>
+        </a>
+      </div>
+      <div class="footer-item">
+        <social-media-icons icon="facebook" color="#fff" size="30" href="https://www.facebook.com/copperheadrobotics/"></social-media-icons>
+        <a href="https://www.facebook.com/copperheadrobotics/">
+          <p>Facebook</p>
+        </a>
+      </div>
+      <div class="footer-item">
+        <social-media-icons icon="youtube" color="#fff" size="30" href="https://www.youtube.com/user/TheHokieguard"></social-media-icons>
+        <a href="https://www.youtube.com/user/TheHokieguard">
+          <p>Youtube</p>
+        </a>
+      </div>
+      <div class="footer-item">
+        <social-media-icons icon="github" color="#fff" size="30" href="https://github.com/team401"></social-media-icons>
+        <a href="https://github.com/team401">
+          <p>Github</p>
+        </a>
+      </div>
+    </footer>
+  </template>
+  <script>
+    (function () {
+      'use strict';
+
+      Polymer({
+        is: 'team-footer',
+        properties: {},
+        ready: function () {}
+      });
+    })();
+  </script>
+</dom-module>
