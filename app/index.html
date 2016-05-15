@@ -34,10 +34,15 @@
   <!-- build:css styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <!-- endbuild-->
+  <link rel='stylesheet' href='bower_components/fullcalendar/dist/fullcalendar.min.css' />
 
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
   <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
   <!-- endbuild -->
+  <script src='bower_components/jquery/dist/jquery.min.js'></script>
+  <script src='bower_components/moment/min/moment.min.js'></script>
+  <script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+  <script src='bower_components/fullcalendar/dist/gcal.js'></script>
 
   <!-- Because this project uses vulcanize this should be your only html import
        in this file. All other imports should go in elements.html -->
@@ -440,14 +445,15 @@
               </paper-material>
               <paper-material>
                 <h2>Email Us</h2>
-                <form is="iron-form" method="post" action="/" id="contactForm">
+                <p>Want to email us to ask a question, get more information, or get involved with our team? Feel free to use the form below to do so! Or email us directly at <a href='mailto:401frc@gmail.com'><b>401frc@gmail.com</b></a></p>
+                <form is="iron-form" method="post" action="mail.php" id="contactForm">
                   <div class="layout horizontal center flex-wrap">
                     <paper-input name="name" label="Name" required auto-validate error-message="Name is required!" style="margin: 1%; min-width: 48%;"></paper-input>
                     <paper-input name="email" label="Email" required auto-validate error-message="Email address is required!" style="margin: 1%; min-width: 48%;"></paper-input>
                     <paper-textarea name="messsage" label="Message" required style="margin: 10px; min-width: 100%;"></paper-textarea>
                   </div>
                   <div class="layout horizontal center-justified">
-                    <paper-button raised onclick="_submit(event)" class="big orange">Submit</paper-button>
+                    <paper-button raised onclick="formSubmit(event)" class="big orange">Submit</paper-button>
                   </div>
                 </form>
               </paper-material>
@@ -488,7 +494,6 @@
   <script src="scripts/photos.js"></script>
   <script src="scripts/resource-data.js"></script>
   <!-- endbuild-->
-  <link rel='stylesheet' href='../bower_components/fullcalendar/dist/fullcalendar.min.css' />
 </body>
 
 </html>

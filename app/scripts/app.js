@@ -10,7 +10,7 @@
   if (window.location.port === '') { // if production
     // Uncomment app.baseURL below and
     // set app.baseURL to '/your-pathname/' if running from folder in production
-    // app.baseUrl = '/polymer-starter-kit/';
+    app.baseUrl = '/Website/';
   }
 
   app.displayInstalledToast = function () {
@@ -47,7 +47,7 @@
   });
 
   app.resTitle = "General";
-  
+
   app.itemSelected = function (event) {
     app.resTitle = event.target.textContent.replace(/\s/g, "");
   };
@@ -104,6 +104,10 @@
     return x === y;
   };
 
+  app.formSubmit = function (event) {
+    event.localTarget.parentElement.submit();
+  };
+  
   app.selected = 0;
 
   app.calOptions = {
