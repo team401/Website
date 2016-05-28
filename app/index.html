@@ -58,15 +58,10 @@
   <!-- endbuild -->
 
   <template is="dom-bind" id="app">
-    <paper-drawer-panel id="paperDrawerPanel">
-      <!-- Drawer Scroll Header Panel -->
-      <paper-scroll-header-panel drawer fixed>
+    <app-drawer-layout id="paperDrawerPanel">
 
-        <!-- Drawer Toolbar -->
-        <paper-toolbar id="drawerToolbar">
-          <span class="menu-name">Menu</span>
-        </paper-toolbar>
-
+      <app-drawer id="appDrawer">
+        <app-toolbar id="drawerToolbar"><span class="menu-name">Menu</span></app-toolbar>
         <!-- Drawer Content -->
         <paper-menu class="app-menu" attr-for-selected="data-route" selected="[[route]]">
           <a data-route="home" href="{{baseUrl}}">
@@ -75,7 +70,7 @@
           </a>
           <paper-submenu>
             <paper-item class="menu-trigger">
-              <iron-icon icon="arrow-drop-down-circle"></iron-icon> About</paper-item>
+              <iron-icon icon="arrow-drop-down-circle"></iron-icon>About</paper-item>
             <paper-menu class="menu-content app-menu">
               <a data-route="about" href="{{baseUrl}}about">
                 <iron-icon icon="social:people"></iron-icon>
@@ -108,31 +103,22 @@
             <span>Contact</span>
           </a>
         </paper-menu>
-      </paper-scroll-header-panel>
+      </app-drawer>
 
-      <!-- Main Area -->
-      <paper-scroll-header-panel main id="headerPanelMain" condenses keep-condensed-header>
-        <!-- Main Toolbar -->
-        <paper-toolbar id="mainToolbar" class="tall">
-          <paper-icon-button id="paperToggle" icon="menu" paper-drawer-toggle></paper-icon-button>
-
-          <span class="space"></span>
-          <!-- Application name -->
-          <div class="middle middle-container">
-            <div class="app-name">Copperhead Robotics</div>
-          </div>
-
-          <!-- Application sub title -->
-          <div class="bottom bottom-container">
-            <div class="bottom-title"><i>FIRST</i> Robotics Competition Team 401</div>
-          </div>
-        </paper-toolbar>
+      <app-header-layout>
+        <app-header fixed shadow id="headerPanelMain">
+          <app-toolbar>
+            <paper-icon-button id="paperToggle" icon="menu" drawer-toggle></paper-icon-button>
+            <div title spacer>
+              Copperhead Robotics
+            </div>
+        </app-header>
 
         <!-- Main Content -->
         <div class="content">
           <neon-animated-pages attr-for-selected="data-route" selected="{{route}}" entry-animation="slide-from-left-animation" exit-animation="slide-right-animation">
             <neon-animatable data-route="home" tabindex="-1">
-              <paper-material elevation="1" class="focus-target">
+              <paper-material elevation="5" class="focus-target">
                 <sc-swiper id="swiperMain" pagination loop keyboardControl style="z-index: -1;">
                   <img src="images/slider/7.jpg">
                   <img src="images/slider/1.jpg">
@@ -143,8 +129,8 @@
                   <img src="images/slider/6.jpg">
                 </sc-swiper>
               </paper-material>
-              <paper-material>
-                <h1 class="page-title" tabindex="-1">Welcome to Copperhead Robotics</h1>
+              <paper-material elevation="5">
+                <h1 class="page-title" tabindex="-1">Welcome to Copperhead Robotics!</h1>
                 <p>Copperhead Robotics is <i>FIRST</i> Robotics Competition Team 401 from Christiansburg, Virginia. As part of <i>FIRST</i> (For Inspiration and Recognition of Science and Technology) we strive to fulfill their mission of inspiring young people to be science and technology leaders by engaging them in exciting mentor-based programs that build science, engineering and technology skills, that inspire innovation, and that foster well-rounded life capabilities including self-confidence, communication, and leadership.</p>
 
                 <p>Team 401 exists as a partnership between the four Montgomery County Public School system high schools and the Virginia Tech School of Education. Copperhead Robotics student members earn high school credit for participating with the team while working with engineering students from Virginia Tech. The Virginia Tech Schools of Education and Mechanical Engineering offer a senior level course, allowing college mentors to earn credit for helping the team.</p>
@@ -153,11 +139,11 @@
             </neon-animatable>
 
             <neon-animatable data-route="cal" tabindex="-1">
-              <paper-material elevation="-1">
+              <paper-material elevation="5">
                 <h1 class="page-title" tabindex="-1">Team Calendar</h1>
                 <p>This is the official calendar for FRC Team 401. Here, you can check on what we have been up to and where we will be going in the future!</p>
               </paper-material>
-              <paper-material elevation="-1">
+              <paper-material elevation="5">
                 <div style="display: flex; justify-content: space-between; align-items: center;">
                   <h1>[[title]]</h1>
                   <div>
@@ -183,13 +169,13 @@
             </neon-animatable>
 
             <neon-animatable data-route="about" tabindex="-1">
-              <paper-material elevation="1" class="focus-target">
+              <paper-material elevation="5" class="focus-target">
                 <h1 class="page-title" tabindex="-1">About Us</h1>
-                <p>In 1999, Hokie Guard was founded by eager and enthusiastic FRC alumni attending Virginia Tech in Blacksburg, VA. One of the first “second-generation” teams, (teams founded by FIRST alumni), Team 401 has stood strong for over 15 years as one of over 5000 teams participating in the FIRST Robotics Competition.</p>
+                <p>In 1999, Copperhead Robotics was founded by eager and enthusiastic FRC alumni attending Virginia Tech in Blacksburg, VA. One of the first “second-generation” teams, (teams founded by FIRST alumni), Team 401 has stood strong for over 15 years as one of over 5000 teams participating in the FIRST Robotics Competition.</p>
                 <p>
                   This program is a unique educational collaboration between Montgomery County Public Schools and the Virginia Tech School of Education. Team 401 brings together high school students and university engineering students to investigate the math, science and engineering principles behind the design and fabrication of a semi-autonomous robot to be entered in an international competition!</p>
               </paper-material>
-              <paper-material elevation="1">
+              <paper-material elevation="5">
                 <center>
                   <h1>Team Timeline</h1>
                   <h3>Team 401 has grown, changed and evolved very dramatically over the years, here's an overview of how.</h3>
@@ -200,7 +186,7 @@
             </neon-animatable>
 
             <neon-animatable data-route="first" tabindex="-1">
-              <paper-material elevation="1" class="focus-target">
+              <paper-material elevation="5" class="focus-target">
                 <h1 class="page-title" tabindex="-1">About <i>FIRST</i></h1>
                 <h3><i>
                   "FIRST is more than robots. The robots are a vehicle for students to learn important life skills. Kids often come in not knowing what to expect- of the program nor of themselves. They leave, even after the first season, with a vision, with confidence, and with a sense that they can create their own future"</i></h3>
@@ -209,7 +195,7 @@
                 <p> <b><i>FIRST</i> is More Than Robots.</b> <i>FIRST</i> participation is proven to encourage students to pursue education and careers in STEM-related fields, inspire them to become leaders and innovators, and enhance their 21 st century work-life skills.</p>
                 <p>The mission of <i>FIRST</i> is to inspire young people to be science and technology leaders, by engaging them in exciting Mentor-based programs that build science, engineering, and technology skills, that inspire innovation, and that foster well-rounded life capabilities including self-confidence, communication, and leadership.</p>
               </paper-material>
-              <paper-material elevation="1">
+              <paper-material elevation="5">
                 <h2><i>FIRST</i> At a Glance</h2>
                 <div style="padding-left: 2em;" class="layout horizontal center flex-wrap">
                   <iron-image class="firstHero flex-wrap" sizing="contain" src="images/first/1.png" preload fade placeholder="{{placeholder}}"></iron-image>
@@ -220,11 +206,11 @@
                   <iron-image class="firstHero flex-wrap" sizing="contain" src="images/first/6.png" preload fade placeholder="{{placeholder}}"></iron-image>
                 </div>
               </paper-material>
-              <paper-material elevation="1">
+              <paper-material elevation="5">
                 <h2>What is <i>FIRST</i> Robotics Competition?</h2>
                 <p>Combining the excitement of sport with the rigors of science and technology. We call <i>FIRST</i> Robotics Competition the ultimate Sport for the Mind. High-school student participants call it “the hardest fun you’ll ever have.” Under strict rules, limited resources, and an intense six-week time limit, teams of 20 or more students are challenged to raise funds, design a team "brand," hone teamwork skills, and build and program industrial-size robots to play a difficult field game against like-minded competitors. It’s as close to real-world engineering as a student can get. Volunteer professional mentors lend their time and talents to guide each team. Each season ends with an exciting <i>FIRST</i> Championship.</p>
               </paper-material>
-              <paper-material elevation="1">
+              <paper-material elevation="5">
                 <h2>Want to find out more?</h2>
                 <center>
                   <h3>Check out the <a href="http://firstinspires.org"><i>FIRST</i> website (www.firstinspires.org)</a> for more information on getting involved or starting a team!</h3></center>
@@ -232,12 +218,12 @@
               <team-footer></team-footer>
             </neon-animatable>
             <neon-animatable data-route="res" tabindex="-1">
-              <paper-material elevation="1" class="focus-target">
+              <paper-material elevation="5" class="focus-target">
                 <h1 class="page-title" tabindex="-1">Resources</h1>
                 <p>Here at Team 401, we make use of many different resources that are available on the web. We thought we'd share them with you so you can also take advantage of them. We would also like to thank all those who have created these wonderful resources, and send out thanks in advance to all your future hard work!
                 </p>
               </paper-material>
-              <paper-material>
+              <paper-material elevation="5">
                 <h2>Documents</h2>
                 <p>Select an area to view available resources.</p>
                 <paper-tabs selected="{{selected}}" id="resTabs" on-tap="itemSelected">
@@ -357,26 +343,26 @@
               <team-footer></team-footer>
             </neon-animatable>
             <neon-animatable data-route="media" tabindex="-1">
-              <paper-material elevation="1" class="focus-target">
+              <paper-material elevation="5" class="focus-target">
                 <h1 class="page-title" tabindex="-1">Team Media</h1>
                 <p>Check out ours photos from build season, demonstrations, outreach events, and competiton!</p>
               </paper-material>
-              <paper-material elevation="1" class="focus-target">
+              <paper-material elevation="5" class="focus-target">
                 <h2>2016 - World Championship</h2>
                 <sc-photoswipe items="{{worlds2016}}">
                 </sc-photoswipe>
               </paper-material>
-              <paper-material elevation="1" class="focus-target">
+              <paper-material elevation="5" class="focus-target">
                 <h2>2016 - Chesapeake District Champs</h2>
                 <sc-photoswipe items="{{dc2016}}">
                 </sc-photoswipe>
               </paper-material>
-              <paper-material elevation="1" class="focus-target">
+              <paper-material elevation="5" class="focus-target">
                 <h2 tabindex="-1">2016 - Doswell District Event</h2>
                 <sc-photoswipe items="{{vados2016}}">
                 </sc-photoswipe>
               </paper-material>
-              <paper-material elevation="1" class="focus-target">
+              <paper-material elevation="5" class="focus-target">
                 <h2 tabindex="-1">2016 - Blacksburg District Event</h2>
                 <sc-photoswipe items="{{vabla2016}}">
                 </sc-photoswipe>
@@ -384,12 +370,12 @@
               <team-footer></team-footer>
             </neon-animatable>
             <neon-animatable data-route="sponsors" tabindex="-1">
-              <paper-material elevation="1" class="focus-target">
+              <paper-material elevation="5" class="focus-target">
                 <h1 class="page-title" tabindex="-1">Sponsors</h1>
                 <p>Team 401 couldn't exist without help from our wonderful sponsors!</p>
                 <p>Thanks to our sponsors, students from all over Mongomery County Public Schools can participate in a unique program which offers real world engineering experience alongside professionals.</p>
               </paper-material>
-              <paper-material>
+              <paper-material elevation="5">
                 <h2 tabindex="-1">2016 - Sponsors</h1>
                 <div id="sponsors" class="flex-wrap" style="justify-content: space-around;">
                   <a href="http://www.aep.com/">
@@ -439,7 +425,7 @@
                 <team-footer></team-footer>
             </neon-animatable>
             <neon-animatable data-route="contact" tabindex="-1">
-              <paper-material elevation="1" class="focus-target">
+              <paper-material elevation="5" class="focus-target">
                 <h1 class="page-title" tabindex="-1">Contact</h1>
                 <p>We love hearing from people. If you still feel like you don't know who we are, feel free to send us an email and we would be more than glad to talk.</p>
               </paper-material>
@@ -448,12 +434,12 @@
                 <p>Want to email us to ask a question, get more information, or get involved with our team? Feel free to use the form below to do so! Or email us directly at <a href='mailto:401frc@gmail.com'><b>401frc@gmail.com</b></a></p>
                 <form is="iron-form" method="post" action="mail.php" id="contactForm">
                   <div class="layout horizontal center flex-wrap">
-                    <paper-input name="name" label="Name" required auto-validate error-message="Name is required!" style="margin: 1%; min-width: 48%;"></paper-input>
-                    <paper-input name="email" label="Email" required auto-validate error-message="Email address is required!" style="margin: 1%; min-width: 48%;"></paper-input>
-                    <paper-textarea name="messsage" label="Message" required style="margin: 10px; min-width: 100%;"></paper-textarea>
+                    <paper-input name="name" id="name" label="Name" required auto-validate error-message="Name is required!" style="margin: 1%; min-width: 48%;"></paper-input>
+                    <paper-input name="email" id="email" label="Email" required auto-validate error-message="Email address is required!" style="margin: 1%; min-width: 48%;"></paper-input>
+                    <paper-textarea name="comments" id="comments" label="Message" required style="margin: 1%; min-width: 100%;"></paper-textarea>
                   </div>
                   <div class="layout horizontal center-justified">
-                    <paper-button raised onclick="formSubmit(event)" class="big orange">Submit</paper-button>
+                    <paper-button raised name="send" on-tap="formSubmit" class="big orange">Submit</paper-button>
                   </div>
                 </form>
               </paper-material>
@@ -482,8 +468,9 @@
             </neon-animatable>
           </neon-animated-pages>
         </div>
-      </paper-scroll-header-panel>
-    </paper-drawer-panel>
+      </app-header-layout>
+    </app-drawer-layout>
+
     <paper-toast id="toast">
       <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
     </paper-toast>
