@@ -1,17 +1,20 @@
-<?php 
-if(isset($_POST['submit'])){
-    $to = "401frc@gmail.com"; // this is your Email address
-    $from = $_POST['email']; // this is the sender's Email address
-    $first_name = $_POST['first_name'];
-    $subject = "Email sent from Team 401 Site";
-    $message = $first_name . " wrote the following:" . "\n\n" . $_POST['message'];
+<?php
+if (isset($_POST['name'])) {
+    $to = '401frc@gmail.com'; // Use your own email address
+    $subject = 'Website Message';
 
-    $headers = "From:" . $from;
-    $headers2 = "From:" . $to;
-    mail($to,$subject,$message,$headers);
-    mail($from,$subject2,$message2,$headers2); // sends a copy of the message to the sender
-    echo "Mail Sent. Thank you " . $first_name . ", we will contact you shortly.";
-    // You can also use header('Location: thank_you.php'); to redirect to another page.
-    // You cannot use header and echo together. It's one or the other.
+	$message = 'Name: ' . $_POST['name'] . "\r\n\r\n";
+	$message .= 'Email: ' . $_POST['email'] . "\r\n\r\n";
+	$message .= 'Message: ' . $_POST['comments'];
+
+    $headers = "From: contact@team401.org\r\n";
+    $headers .= 'Content-Type: text/plain; charset=utf-8';
+
+    $email = filter_input(INPUT_POST, 'email', FILTER_VALIDATE_EMAIL);
+    if ($email) {
+        $headers .= "\r\nReply-To: $email";
     }
+
+    $success = mail($to, $subject, $message, $headers, '‑fhokieguard@gmail.com');
+}
 ?>
