@@ -19,7 +19,7 @@
 
   <!-- Add to homescreen for Chrome on Android -->
   <meta name="mobile-web-app-capable" content="yes">
-  <meta name="application-name" content="PSK">
+  <meta name="application-name" content="Team 401">
   <link rel="icon" sizes="192x192" href="images/touch/chrome-touch-icon-192x192.png">
 
   <!-- Add to homescreen for Safari on iOS -->
@@ -37,27 +37,23 @@
   <link rel='stylesheet' href='bower_components/fullcalendar/dist/fullcalendar.min.css' />
 
   <!-- build:js bower_components/webcomponentsjs/webcomponents-lite.min.js -->
-  <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.js" async></script>
   <!-- endbuild -->
-  <script src='bower_components/jquery/dist/jquery.min.js'></script>
-  <script src='bower_components/moment/min/moment.min.js'></script>
-  <script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
-  <script src='bower_components/fullcalendar/dist/gcal.js'></script>
 
   <!-- Because this project uses vulcanize this should be your only html import
        in this file. All other imports should go in elements.html -->
-  <link rel="import" href="elements/elements.html">
+  <link rel="import" id="bundle" href="elements/elements.html">
 
   <!-- For shared styles, shared-styles.html import in elements.html -->
   <style is="custom-style" include="shared-styles"></style>
 </head>
 
-<body unresolved>
+<body>
   <!-- build:remove -->
   <span id="browser-sync-binding"></span>
   <!-- endbuild -->
-
   <template is="dom-bind" id="app">
+
     <app-drawer-layout id="paperDrawerPanel">
 
       <app-drawer id="appDrawer">
@@ -163,7 +159,7 @@
                 </div>
                 <template is="dom-if" if="{{isEqual(route, 'cal')}}">
                 </template>
-                <fullcalendar-calendar id="calendar" options="[[calOptions]]" view="{{view}}" on-view-render="setTitle" view="month" class="focus-target"></fullcalendar-calendar>
+                <fullcalendar-calendar id="calendar" options="[[calOptions]]" view="{{view}}" on-view-render="setTitle" on-event-click="handleCalEvent" view="month" class="focus-target"></fullcalendar-calendar>
               </paper-material>
               <team-footer></team-footer>
             </neon-animatable>
@@ -456,7 +452,7 @@
                     <p>100 Independence Boulevard</p>
                     <p>Christiansburg, VA</p>
                     <p>24073</p>
-                    <a style="text-decoration:none" target="_blank" href=https://goo.gl/maps/c27RVnm5viN2>
+                    <a style="text-decoration:none" target="_blank" href="https://goo.gl/maps/c27RVnm5viN2">
                       <div class="layout horizontal center-justified">
                         <paper-button raised class="orange">Maps Link</paper-button>
                       </div>
@@ -474,12 +470,28 @@
     <paper-toast id="toast">
       <span class="toast-hide-button" role="button" tabindex="0" onclick="app.$.toast.hide()">Ok</span>
     </paper-toast>
+
+    <paper-dialog id="eventDialog" entry-animation="scale-up-animation" exit-animation="fade-out-animation" with-backdrop always-on-top>
+      <h2>{{eventTitle}}</h2>
+      <div><b>When: </b>{{eventTime}}</div>
+      <div><b>Where: </b>{{eventLoc}}</div>
+      <div><i>{{eventDesc}}</i></div>
+      <a style="text-decoration:none" target="_blank" href="{{eventLink}}">
+        <div class="layout horizontal center-justified">
+          <paper-button raised class="orange">More Info</paper-button>
+        </div>
+      </a>
+    </paper-dialog>
   </template>
 
+  <script src='bower_components/jquery/dist/jquery.min.js'></script>
+  <script src='bower_components/moment/min/moment.min.js'></script>
+  <script src='bower_components/fullcalendar/dist/fullcalendar.min.js'></script>
+  <script src='bower_components/fullcalendar/dist/gcal.js'></script>
   <!-- build:js scripts/app.js -->
   <script src="scripts/app.js"></script>
-  <script src="scripts/photos.js"></script>
-  <script src="scripts/resource-data.js"></script>
+  <script src="scripts/photos.js" async></script>
+  <script src="scripts/resource-data.js" async></script>
   <!-- endbuild-->
 </body>
 

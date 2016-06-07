@@ -13,17 +13,37 @@
     app.baseUrl = '/';
   }
 
-  app.displayInstalledToast = function () {
-    // Check to make sure caching is actually enabled—it won't be in the dev environment.
-    if (!Polymer.dom(document).querySelector('platinum-sw-cache').disabled) {
-      Polymer.dom(document).querySelector('#caching-complete').show();
-    }
-  };
-
   app.renderCal = function () {
     var calendar = Polymer.dom(document).querySelector('fullcalendar-calendar');
     calendar.changeView('month');
   };
+
+  app.handleCalEvent = function (polEvent, calEvent) {
+    calEvent.jsEvent.preventDefault();
+
+    var start = new Date(calEvent.event.start._i);
+    var end = new Date(calEvent.event.end._i);
+
+    var startTime = moment(start).format('h:mm a');
+    var endTime = moment(end).format('h:mm a');
+
+    var startDay = start.toDateString();
+    var endDay = end.toDateString();
+
+    if (startDay != endDay)
+      {
+        startTime = moment(start).format('dddd MMM Do, h:mm a');
+        endTime = moment(end).format('dddd MMM Do h:mm a');
+      }
+
+    app.eventTitle = calEvent.event.title;
+    app.eventTime = startTime + " - " + endTime;
+    app.eventLoc = calEvent.event.location;
+    app.eventDesc = calEvent.event.description;
+    app.eventLink = calEvent.event.url;
+    app.$.eventDialog.open();
+  };
+
 
   // imports are loaded and elements have been registered
   // Listen for template bound event to know when bindings
