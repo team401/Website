@@ -30,11 +30,10 @@
     var startDay = start.toDateString();
     var endDay = end.toDateString();
 
-    if (startDay != endDay)
-      {
-        startTime = moment(start).format('dddd MMM Do, h:mm a');
-        endTime = moment(end).format('dddd MMM Do h:mm a');
-      }
+    if (startDay != endDay) {
+      startTime = moment(start).format('dddd MMM Do, h:mm a');
+      endTime = moment(end).format('dddd MMM Do h:mm a');
+    }
 
     app.eventTitle = calEvent.event.title;
     app.eventTime = startTime + " - " + endTime;
